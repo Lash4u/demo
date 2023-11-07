@@ -1,0 +1,64 @@
+
+
+
+
+#server:
+#  servlet:
+#    session:
+#      timeout: 30m
+#      cookie:
+#        name: 'test-cookie'
+#        same-site: lax
+#
+#
+#spring:
+#  security:
+#    oauth2:
+#      client:
+#        provider:
+#          spring:
+#            issuer-uri: http://127.0.0.1:9000
+#        registration:
+#          demo-client:
+#            provider: spring
+#            client-id: 'test'
+#            client-secret: 'Test123!@#'
+#            authorization-grant-type: authorization_code
+#            client-authentication-method: client_secret_basic
+#            redirect-uri: 'http://127.0.0.1:8080/login/oauth2/code/demo-client'
+#            scope:
+#              - openid
+#
+#
+
+
+
+server:
+  servlet:
+    session:
+      timeout: 30m
+      cookie:
+        name: 'test-cookie'
+        same-site: lax
+
+  port: 8082
+
+
+spring:
+  security:
+    oauth2:
+      client:
+        provider:
+          spring:
+            issuer-uri: http://10.0.155.143:9000
+        registration:
+          demo-client:
+            provider: spring
+            client-id: 'test'
+            client-secret: 'Test123!@#'
+            authorization-grant-type: authorization_code
+            client-authentication-method: client_secret_basic
+            redirect-uri: 'http://10.0.155.143:8082/login/oauth2/code/demo-client'
+            scope:
+              - openid
+
